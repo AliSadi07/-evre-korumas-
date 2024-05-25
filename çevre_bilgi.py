@@ -1,5 +1,4 @@
 import discord
-import random
 from discord.ext import commands
 
 intents = discord.Intents.default()
@@ -18,15 +17,15 @@ async def info_menu(ctx):
     menu = (
         "Çevreye önem veren ve çevre dostu uygulamalar ve atıkları azaltmanın yolları hakkında daha fazla bilgi edinmek isteyen kişiler için şunları yapabilirsiniz:\n\n"
         "**1. Çevresel İpuçları:** !ipucu\n"
-        "**2. Geri Dönüşüm Bilgileri:** !geridönüşüm\n"
-        "**3. Doğa Dostu Alışveriş Tavsiyeleri:** !alışveriş\n"
-        "**4. Atık Azaltma Stratejileri:** !atıkazaltma\n"
+        "**2. Geri Dönüşüm Bilgileri:** !geridonusum\n"
+        "**3. Doğa Dostu Alışveriş Tavsiyeleri:** !alisveris\n"
+        "**4. Atık Azaltma Stratejileri:** !atikazaltma\n"
         "**5. Çevre Dostu Etkinlikler:** !etkinlikler\n"
         "**6. Çevre Haberleri:** !haberler"
     )
     await ctx.send(menu)
 
-# Aşağıda bu komutların içeriklerini doldurabilirsiniz:
+# Çevresel İpuçları
 @bot.command()
 async def ipucu(ctx):
     tips = (
@@ -39,8 +38,8 @@ async def ipucu(ctx):
     )
     await ctx.send(tips)
 
-# geri dönüşüm
-@bot.command()
+# Geri Dönüşüm Bilgileri
+@bot.command(name="geridonusum")
 async def recycling_info(ctx):
     recycling = (
         "Geri Dönüşüm Bilgileri:\n\n"
@@ -52,60 +51,56 @@ async def recycling_info(ctx):
     )
     await ctx.send(recycling)
 
-# alışveriş
-@bot.command()
-async def alışveriş(ctx):
+# Doğa Dostu Alışveriş Tavsiyeleri
+@bot.command(name="alisveris")
+async def alisveris(ctx):
     alisveris = (
-        "Doğa_Dostu_Alışveriş_Tavsiyeleri:\n\n"
-        "1. Çocuklara oyunca alırken %100 doğal alın."
-        "2."
-        "3."
-        "4."
-        "5."
+        "Doğa Dostu Alışveriş Tavsiyeleri:\n\n"
+        "1. Yerel ve organik ürünler satın alın.\n"
+        "2. Geri dönüştürülebilir veya biyolojik olarak parçalanabilir ambalajları tercih edin.\n"
+        "3. Daha az ambalajlı ürünler seçin.\n"
+        "4. İkinci el ürünler satın alın veya takas yapın.\n"
+        "5. Plastik poşetler yerine bez çantalar kullanın."
     )
     await ctx.send(alisveris)
 
-# alışveriş
-@bot.command()
-async def atık_azaltma(ctx):
+# Atık Azaltma Stratejileri
+@bot.command(name="atikazaltma")
+async def atik_azaltma(ctx):
     atik = (
         "Atık Azaltma Stratejileri:\n\n"
-        "1. Çocuklara oyunca alırken %100 doğal alın.\n"
-        "2."
-        "3."
-        "4."
-        "5."
+        "1. Yeniden kullanılabilir su şişeleri ve kahve bardakları kullanın.\n"
+        "2. Gıda atıklarını kompost yapın.\n"
+        "3. Gereksiz posta ve reklamları durdurun.\n"
+        "4. Tek kullanımlık ürünlerden kaçının.\n"
+        "5. Tamir edilebilecek eşyaları atmayın, tamir edin."
     )
     await ctx.send(atik)
 
-# alışveriş
-@bot.command()
+# Çevre Dostu Etkinlikler
+@bot.command(name="etkinlikler")
 async def etkinlikler(ctx):
     etkinlik = (
         "Çevre Dostu Etkinlikler:\n\n"
-        "1. En fazla ağacı dikme etklinliği\n"
-        "2."
-        "3."
-        "4."
-        "5."
+        "1. Ağaç dikme etkinliklerine katılın.\n"
+        "2. Çevre temizleme kampanyalarına gönüllü olun.\n"
+        "3. Yerel çiftliklerde gönüllü çalışın.\n"
+        "4. Çevre bilinci arttırma seminerlerine katılın.\n"
+        "5. Doğa yürüyüşleri düzenleyin ve katılın."
     )
     await ctx.send(etkinlik)
 
-# alışveriş
-@bot.command()
+# Çevre Haberleri
+@bot.command(name="haberler")
 async def haberler(ctx):
     haberler = (
-        "Çevre Etkinlikleri:\n\n"
-        "1. Çocuklara oyunca alırken %100 doğal alın.\n"
-        "2."
-        "3."
-        "4."
-        "5."
+        "Çevre Haberleri:\n\n"
+        "1. Yerel ve küresel çevre ile ilgili haberleri takip edin.\n"
+        "2. Çevre dostu yenilikler ve teknolojiler hakkında bilgi edinin.\n"
+        "3. İklim değişikliği ile ilgili gelişmeleri izleyin.\n"
+        "4. Doğal yaşamı koruma çabalarına dair haberleri takip edin.\n"
+        "5. Çevre politikaları ve yasalarındaki değişiklikleri öğrenin."
     )
     await ctx.send(haberler)
-
-
-
-
 
 bot.run("")
